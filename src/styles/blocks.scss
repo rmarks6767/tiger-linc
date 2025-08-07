@@ -1,0 +1,64 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// 6. Other stuff we are using 
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/grid";
+
+// This overrides the wp-button styling with bootstrap's
+.wp-block-button {
+  all: revert;
+
+  .wp-block-button__link {
+    all: revert;
+  }
+
+  .wp-element-button {
+    all: revert;
+  }
+
+  &.primary {
+    .wp-block-button__link {
+      background-color: #f4b810;
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+
+  // TODO: Set the secondary button if needed
+  &.secondary {
+    .wp-block-button__link {
+      background-color: white;
+      border: 1px solid #f4b810;
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}
+
+// This overrides the wp-figure styling
+
+// This overrides the wp-block-query related stylings
+.wp-block-query {
+  all: revert;
+
+  .wp-block-post-template {
+    all: revert;
+    @extend .row, .row-cols-1, .row-cols-md-2, .g-4;
+
+    .wp-block-post {
+      all: revert;
+      @extend .col;
+    }
+  }
+}

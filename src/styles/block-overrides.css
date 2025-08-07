@@ -1,0 +1,74 @@
+.is-layout-flow {
+  all: unset;
+}
+
+.wp-block-group {
+  all: unset;
+}
+
+.wp-block-button {
+  all: unset;
+}
+
+.wp-block-button__link {
+  all: unset;
+}
+
+.wp-element-button {
+  all: unset;
+}
+
+.wp-block-embed {
+  all: unset;
+}
+
+.wp-block-embed__wrapper {
+  all: unset;
+}
+
+.wp-block-embed-vimeo {
+  all: unset;
+}
+
+
+/* Posts Container for Home Page */
+
+.wp-block-latest-posts__list {
+
+}
+
+.has-dates {
+
+}
+
+.has-author {
+
+}
+
+.wp-block-latest-posts {
+
+}
+
+.wp-block-latest-posts__post-title {
+
+}
+
+.wp-block-latest-posts__post-author {
+
+}
+
+.wp-block-latest-posts__post-date {
+
+}
+
+.wp-block-latest-posts__post-excerpt {
+  all: unset;
+}
+
+.wp-block-latest-posts__read-more {
+
+}
+
+.posts-container {
+  
+}

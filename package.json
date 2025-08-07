@@ -1,0 +1,20 @@
+{
+  "name": "tiger-linc",
+  "version": "1.0.0",
+  "description": "WordPress Site for Towson University's Tiger LINC",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmarks6767/tiger-linc.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rmarks6767/tiger-linc/issues"
+  },
+  "homepage": "https://github.com/rmarks6767/tiger-linc#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "sass": "^1.90.0"
+  }
+}

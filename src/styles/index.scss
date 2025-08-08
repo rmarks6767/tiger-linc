@@ -17,6 +17,9 @@
 // 6. Other stuff we are using 
 @import "../../node_modules/bootstrap/scss/buttons";
 @import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Components
 @import "./blocks";
@@ -29,3 +32,9 @@
 body {
   min-height: 100vh;
 }
+
+
+// * {
+//   margin-block-start: unset !important;
+//   margin-block-end: unset !important;
+// }

@@ -2,7 +2,9 @@
   "name": "tiger-linc",
   "version": "1.0.0",
   "description": "WordPress Site for Towson University's Tiger LINC",
-  "scripts": {},
+  "scripts": {
+    "sass:watch": "sass --watch src/styles/index.scss build/index.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rmarks6767/tiger-linc.git"

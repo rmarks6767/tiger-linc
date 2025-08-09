@@ -1,9 +1,9 @@
 .home-page {
-  .posts-container {
-    background-color: #f4b810;
-  }
+
+
 
   @media (min-width: 992px) {
+    
     .landing-top {
       height: 100%;
       display: flex;
@@ -23,13 +23,16 @@
     
         height: 100%;
         width: 50%;
-        position: relative;
 
-        iframe {
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          left: max(-17.5%, -112px);
+        .wp-block-embed__wrapper {
+          position: relative;
+
+          iframe {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: max(-17.5%, -112px);
+          }
         }
       }
     }
@@ -42,12 +45,27 @@
       align-items: center;
       width: 100%;
 
-      .btn {
+      .towson-button {
         margin-right: 8px;
 
         &:last-child {
           margin-right: 0;
         }
+      }
+    }
+
+    .posts-section {
+      position: relative;
+      height: 100%;
+
+      .yellow-swatch {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        max-width: 99vw;
+        top: 25%;
+        height: 25%;
+        position: absolute;
+        background-color: #f4b810;
       }
     }
   }
@@ -75,7 +93,7 @@
       }
     }
     .linc-button-container {
-      .btn {
+      .towson-button {
         width: 100%;
         margin-bottom: 8px;
       }

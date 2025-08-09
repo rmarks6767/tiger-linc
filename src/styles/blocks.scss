@@ -1,17 +1,17 @@
 // This overrides the wp-button styling with bootstrap's
-.wp-block-button {
-  all: revert;
+.towson-button {
+  .wp-block-button__link, .wp-block-read-more {
+    @extend .btn;
+    border: unset;
+    transition: all 0.3s ease-in-out;
 
-  .wp-block-button__link {
-    all: revert;
-  }
-
-  .wp-element-button {
-    all: revert;
+    &:hover {
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   &.primary {
-    .wp-block-button__link {
+    .wp-block-button__link, .wp-block-read-more {
       background-color: #f4b810;
 
       &:hover {
@@ -21,63 +21,14 @@
     }
   }
 
-  // TODO: Set the secondary button if needed
   &.secondary {
-    .wp-block-button__link {
+    .wp-block-button__link, .wp-block-read-more {
       background-color: white;
       border: 1px solid #f4b810;
 
       &:hover {
         color: white;
         background-color: black;
-      }
-    }
-  }
-}
-
-.posts-container {
-  @extend .row, .row-cols-1, .row-cols-md-2, .g-4;
-
-  li.wp-block-post {
-    @extend .col;
-
-    > .wp-block-group {
-      @extend .card, .h-100;
-      border-radius: 15px;
-
-      > .wp-block-post-featured-image {
-        img {
-          @extend .card-img-top;
-          border-radius: 15px 15px 0 0;
-        }
-      }
-
-      > .wp-block-group {
-        @extend .card-body;
-
-        > .wp-block-post-title {
-          @extend .card-title;
-        }
-
-        > .wp-block-post-date {
-          @extend .card-subtitle, .mb-2, .text-body-secondary;
-        }
-
-        > .wp-block-post-excerpt {
-          > .wp-block-post-excerpt__excerpt {
-            @extend .card-text;
-          }
-        }
-      }
-
-      .wp-block-read-more {
-        @extend .btn, .w-100;
-        background-color: #f4b810;
-
-        &:hover {
-          color: white;
-          background-color: black;
-        }
       }
     }
   }

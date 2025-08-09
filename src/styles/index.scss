@@ -31,10 +31,18 @@
 
 body {
   min-height: 100vh;
+
+  .wp-site-blocks {
+    padding: unset;
+  }
 }
 
+.remove-layout-flow {
+  margin-block-end: unset !important;
+  margin-block-start: unset !important;
 
-// * {
-//   margin-block-start: unset !important;
-//   margin-block-end: unset !important;
-// }
+  > * {
+    margin-block-end: unset !important;
+    margin-block-start: unset !important;
+  }
+}

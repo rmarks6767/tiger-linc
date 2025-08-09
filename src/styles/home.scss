@@ -1,9 +1,5 @@
 .home-page {
-
-
-
   @media (min-width: 992px) {
-    
     .landing-top {
       height: 100%;
       display: flex;
@@ -17,15 +13,22 @@
       }
 
       .video-container {
+        position: relative;
+        background-color: #f4b810;
         display: flex;
         justify-content: center;
         align-items: center;
-    
         height: 100%;
         width: 50%;
 
         .wp-block-embed__wrapper {
-          position: relative;
+          background-color: #f4b810;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 50%;
+          position: unset;
 
           iframe {
             position: absolute;
@@ -56,16 +59,17 @@
 
     .posts-section {
       position: relative;
-      height: 100%;
 
       .yellow-swatch {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        max-width: 99vw;
-        top: 25%;
-        height: 25%;
+        width: 95vw;
+        max-width: calc(95vw - 8px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 50%;
         position: absolute;
         background-color: #f4b810;
+        border-radius: 15px;
       }
     }
   }

@@ -20,6 +20,13 @@
     }
   }
 
+  .stand-for-container {
+    .card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   @media (min-width: 992px) {
     .landing-top {

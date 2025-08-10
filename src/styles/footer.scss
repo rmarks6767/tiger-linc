@@ -1,0 +1,21 @@
+footer.site-footer-container {
+  background-color: black;
+  color: white;
+
+  h3.wp-block-heading {
+    color: #f4b810;
+  }
+
+  .contact {
+    a {
+      transition: all 0.3s ease;
+      color: #f4b810;
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 0.9;
+        text-decoration: none;
+      }
+    }
+  }
+}

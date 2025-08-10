@@ -1,0 +1,77 @@
+<!-- wp:template-part {"slug":"header","theme":"blockbase","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"single-post"} -->
+<main class="wp-block-group single-post">
+  <!-- wp:group {"className":"container mb-5"} -->
+  <div class="wp-block-group container mb-5">
+    <!-- wp:group -->
+    <div class="wp-block-group">
+      <!-- wp:post-featured-image /-->
+      <!-- wp:post-title /-->
+      <!-- wp:group -->
+      <div class="wp-block-group">
+        <!-- wp:group  -->
+        <div class="wp-block-group">
+          <!-- wp:avatar /-->
+          <!-- wp:post-author-name /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- wp:post-date /-->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:group {"className":"container mb-5"} -->
+  <div class="wp-block-group container mb-5">
+    <!-- wp:post-content /-->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:group {"className":"container mb-5"} -->
+  <div class="wp-block-group container mb-5">
+    <!-- wp:comments -->
+    <div class="wp-block-comments">
+      <!-- wp:post-comments-form /-->
+      <!-- wp:comments-title {"showPostTitle":false} /-->
+      <!-- wp:comment-template -->
+        <!-- wp:group {"className":"comment-container"} -->
+        <div class="wp-block-group comment-container">
+          <!-- wp:group {"className":"meta-container"} -->
+          <div class="wp-block-group meta-container">
+            <!-- wp:avatar /-->
+            <!-- wp:group {"className":"name-date-container"} -->
+            <div class="wp-block-group">
+              <!-- wp:comment-author-name  /-->
+              <!-- wp:comment-date /-->
+            </div>
+            <!-- /wp:group -->
+            <!-- wp:comment-edit-link /-->
+          </div>
+          <!-- /wp:group -->
+          <!-- wp:group {"className":"content-container"} -->
+          <div class="wp-block-group content-container">
+            <!-- wp:comment-content /-->
+            <!-- wp:comment-reply-link /-->
+          </div>
+          <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+      <!-- /wp:comment-template -->
+
+      <!-- wp:comments-pagination -->
+      <!-- wp:comments-pagination-previous /-->
+
+      <!-- wp:comments-pagination-numbers /-->
+
+      <!-- wp:comments-pagination-next /-->
+      <!-- /wp:comments-pagination -->
+    </div>
+    <!-- /wp:comments -->
+  </div>
+  <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","theme":"blockbase","tagName":"footer","className":"site-footer-container"} /-->

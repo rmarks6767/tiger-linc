@@ -1,5 +1,51 @@
-nav {
-  border-bottom: 1px solid #efeeee;
-  background: rgba(255,255,255,.95);
-  z-index: 999;
+header {
+  .navbar-toggler {
+    margin: 0;
+  }
+
+  nav {
+    border-bottom: 1px solid #efeeee;
+    background: rgba(255,255,255,.95);
+    z-index: 999;
+
+    img {
+      width: unset !important;
+      height: 50px !important;
+    }
+
+    #navbar-container {
+      .navbar-nav {
+        .nav-item {
+          @extend .remove-layout-flow;
+          padding: 0;
+          margin-left: 24px;
+
+          .wp-block-navigation-item__content {
+            @extend .nav-link;
+            padding: 0;
+
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+
+      .wp-block-loginout {
+        @extend .nav-item;
+        margin: 0;
+
+        a {
+          @extend .nav-link;
+          color: rgba(0, 0, 0, 0.65);
+          margin-left: 24px;
+          font-size: 1.5rem;
+          
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,7 +1,29 @@
 .home-page {
+  .posts-section {
+    .row {
+      .wp-block-post {
+        @extend .col-12, .col-lg-4;
+
+        .card {
+          h2, .card-subtitle {
+            margin: 0;
+          }
+
+          .wp-block-post-featured-image {
+            img {
+              @extend .card-img-top;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+
+
   @media (min-width: 992px) {
     .landing-top {
-      height: 100%;
+      height: calc(100vh - 67px);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,6 +62,14 @@
       }
     }
   
+    .stand-for-container {
+      .row {
+        * {
+          margin-block-end: unset !important;
+          margin-block-start: unset !important;
+        }
+      }
+    }
   
     .linc-button-container {
       padding: 40px;
@@ -59,6 +89,13 @@
 
     .posts-section {
       position: relative;
+
+      .row {
+        * {
+          margin-block-end: unset !important;
+          margin-block-start: unset !important;
+        }
+      }
 
       .yellow-swatch {
         width: 95vw;

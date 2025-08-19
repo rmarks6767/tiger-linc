@@ -1,3 +1,17 @@
+.towson-link {
+  a {
+    transition: all 0.3s ease-in-out;
+    color: #f4b810;
+    text-decoration: none;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      opacity: 0.9;
+      text-decoration: underline;
+    }
+  }
+}
+
 .towson-button {
   .wp-block-button__link, .wp-block-read-more {
     @extend .btn;
@@ -32,3 +46,34 @@
     }
   }
 }
+
+.post-meta-container {
+  display: flex;
+  align-items: center;
+
+  .wp-block-post-author {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    
+    .wp-block-post-author__avatar, .wp-block-avatar {
+      margin-right: 16px;
+
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+
+    .wp-block-post-author__name, .wp-block-comment-author-name {
+      margin: 0;
+      @extend .towson-link;
+    }
+  }
+
+  .wp-block-post-date, .wp-block-comment-date {
+    margin: 0;
+  }
+}
+

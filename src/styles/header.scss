@@ -11,6 +11,10 @@ header {
     img {
       width: unset !important;
       height: 50px !important;
+
+      @media (max-width: 575px) {
+        height: 30px !important;
+      }
     }
 
     #navbar-container {

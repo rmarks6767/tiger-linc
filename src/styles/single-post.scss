@@ -6,47 +6,6 @@
   .page-container {
     max-width: 960px;
 
-    .meta-container {
-      display: flex;
-      align-items: center;
-
-      .wp-block-post-author {
-        display: flex;
-        align-items: center;
-        margin-right: 16px;
-        
-        .wp-block-post-author__avatar, .wp-block-avatar {
-          margin-right: 16px;
-
-          img {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-          }
-
-        }
-
-        .wp-block-post-author__name, .wp-block-comment-author-name {
-          margin: 0;
-          
-          a {
-            transition: all 0.3s ease;
-            color: #f4b810;
-            text-decoration: underline;
-      
-            &:hover {
-              opacity: 0.9;
-              text-decoration: none;
-            }
-          }
-        }
-      }
-
-      .wp-block-post-date, .wp-block-comment-date {
-        margin: 0;
-      }
-    }
-
     .hero-content {  
       .wp-block-post-title {
         @extend .display-3;
@@ -57,11 +16,9 @@
       }
     }
   
-    .content-container {
-      // TODO: Maybe we want to add special styles here?
-    }
-  
     .comment-container {
+      @extend .towson-link;
+
       form {
         display: flex;
         flex-direction: column;
@@ -104,17 +61,6 @@
 
         .comment-respond {
           margin-top: 32px;
-        }
-      }
-
-      a {
-        transition: all 0.3s ease;
-        color: #f4b810;
-        text-decoration: underline;
-  
-        &:hover {
-          opacity: 0.9;
-          text-decoration: none;
         }
       }
     }

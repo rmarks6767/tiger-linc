@@ -1,0 +1,52 @@
+<!-- wp:group {"className":"posts-list container mt-2 mb-5"} -->
+<div class="wp-block-group posts-list container mt-2 mb-5">
+  <!-- wp:heading {"className":"display-3"} -->
+  <h2 class="wp-block-heading display-3">Blog</h2>
+  <!-- /wp:heading -->
+  <!-- wp:query {"queryId":6,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false,"taxQuery":null,"parents":[]}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template {"className":"remove-layout-flow row row-cols-1 g-4"} -->
+      <!-- wp:group {"className":"card h-100 post-container"} -->
+      <div class="wp-block-group card h-100 post-container">
+        <!-- wp:post-featured-image /-->
+        <!-- wp:group {"className":"card-header remove-layout-flow"} -->
+        <div class="wp-block-group card-header remove-layout-flow">
+          <!-- wp:post-title {"className":"card-title"} /-->
+          <!-- wp:group {"className":"post-meta-container card-subtitle mb-2 text-body-secondary"} -->
+          <div class="wp-block-group post-meta-container card-subtitle mb-2 text-body-secondary">
+            <!-- wp:group -->
+            <div class="wp-block-group">
+              <!-- wp:post-author {"showBio":false,"isLink":true} /-->
+            </div>
+            <!-- /wp:group -->
+            <!-- wp:post-date /-->
+          </div>
+          <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        <!-- wp:group {"className":"card-body"} -->
+        <div class="wp-block-group card-body">
+          <!-- wp:post-excerpt {"className":"card-text"} /-->
+        </div>
+        <!-- /wp:group -->
+        <!-- wp:group {"className":"card-footer towson-button primary"} -->
+        <div class="wp-block-group card-footer towson-button primary">
+          <!-- wp:read-more {"className":"w-100"} /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+    <!-- wp:group {"className":"pagination-container"} -->
+    <div class="wp-block-group pagination-container">
+      <!-- wp:query-pagination {"paginationArrow":"arrow","className":"pagination","layout":{"type":"flex","justifyContent":"center","flexWrap":"nowrap"}} -->
+      <!-- wp:query-pagination-previous {"label":"Previous","className":"page-link"} /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next {"label":"Next","className":"page-link"} /-->
+      <!-- /wp:query-pagination -->
+    </div>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:query -->
+</div>
+<!-- /wp:group -->

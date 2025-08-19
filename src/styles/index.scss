@@ -9,11 +9,13 @@
 @import "./blocks";
 @import "./header";
 @import "./footer";
+@import "./road";
 
 // Pages 
 @import "./home";
 @import "./not-found";
 @import "./single-post";
+@import "./blog";
 
 body {
   .wp-site-blocks {

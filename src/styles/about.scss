@@ -1,0 +1,78 @@
+.about-page {
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text-container {
+      width: 50%;
+
+      .list-container {
+        .list-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+
+          p {
+            @extend .remove-layout-flow;
+          }
+
+          i {
+            font-size: 4rem;
+            color: black;
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+
+      .text-container {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 24px;
+      }
+    }
+
+    ul {
+      li {
+        @extend .lead;
+      }
+    }
+
+    img {
+      @extend .shadow, .rounded;
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+    }
+  }
+
+  .yellow-container {
+    background-color: #f4b810;
+    padding-bottom: 4rem;
+  }
+
+  .hero-wave {
+    background-color: #f4b810;
+
+    svg {
+      transform: translateY(1px);
+
+      &.opposite {
+        transform: rotate(180deg) translateY(2px);
+      }
+    }
+  }
+
+  .clubs-container {
+    .row {
+      * {
+        margin-block-end: unset !important;
+        margin-block-start: unset !important;
+      }
+    }
+  }
+}

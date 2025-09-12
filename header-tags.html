@@ -1,0 +1,97 @@
+<!-- Generic site Info -->
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+
+<!-- Bootstrap -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+  crossorigin="anonymous"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+/>
+
+<!-- Loading Panzoom for Roadmap Graphic -->
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom/dist/panzoom.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  // Initialize JS on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    function registerPopovers() {
+      if (!document.getElementById("popover-container")) {
+        return;
+      }
+
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map((popoverTriggerEl, i) => {
+        popoverTriggerEl.addEventListener("click", function (e) {
+          popoverList.forEach((popover, j) => {
+            if (i !== j) {
+              popover.hide();
+            }
+          });
+        });
+
+        return new bootstrap.Popover(popoverTriggerEl, {
+          container: "#popover-container",
+        });
+      });
+    }
+
+    function registerPanzoom() {
+      const elem = document.getElementById("panzoom-container");
+      const zoomInButton = document.getElementById("zoom-in-btn");
+      const zoomOutButton = document.getElementById("zoom-out-btn");
+      const resetButton = document.getElementById("reset-btn");
+      const fullScreenButton = document.getElementById("fullscreen-btn");
+
+      if (!elem) {
+        return;
+      }
+
+      const panzoom = Panzoom(elem);
+
+      // Bind mouse wheel for zooming
+      elem.parentElement.addEventListener("wheel", panzoom.zoomWithWheel);
+
+      // Bind buttons to Panzoom methods
+      zoomInButton.addEventListener("click", panzoom.zoomIn);
+      zoomOutButton.addEventListener("click", panzoom.zoomOut);
+      resetButton.addEventListener("click", panzoom.reset);
+      fullScreenButton.addEventListener("click", () => {
+        const container = document.getElementById("roadmap-container");
+
+        if (container.classList.contains("is-fullscreen")) {
+          document.getElementById("fullscreen").style.display = "unset";
+          document.getElementById("fullscreen-exit").style.display = "none";
+
+          panzoom.reset();
+
+          container.classList.remove("is-fullscreen");
+          document.documentElement.style.overflow = "scroll";
+          document.body.scroll = "yes";
+        } else {
+          document.getElementById("fullscreen").style.display = "none";
+          document.getElementById("fullscreen-exit").style.display = "unset";
+
+          panzoom.reset();
+
+          container.classList.add("is-fullscreen");
+          document.documentElement.style.overflow = "hidden";
+          document.body.scroll = "no";
+        }
+      });
+    }
+
+    registerPopovers();
+    registerPanzoom();
+  });
+</script>

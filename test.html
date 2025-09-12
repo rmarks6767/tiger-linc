@@ -1,0 +1,55 @@
+<html>
+
+  <head>
+    <title>Test Page</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Panzoom -->
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom/dist/panzoom.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const elem = document.getElementById('panzoom-element');
+        const zoomInButton = document.getElementById('zoom-in-btn');
+        const zoomOutButton = document.getElementById('zoom-out-btn');
+        const resetButton = document.getElementById('reset-btn');
+
+        const panzoom = Panzoom(elem, {
+          maxScale: 2, // Maximum zoom level
+          minScale: 0.5, // Minimum zoom level
+          contain: 'inside' // Keep content inside the container
+        });
+
+        // Bind mouse wheel for zooming
+        elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+
+        // Bind buttons to Panzoom methods
+        zoomInButton.addEventListener('click', panzoom.zoomIn);
+        zoomOutButton.addEventListener('click', panzoom.zoomOut);
+        resetButton.addEventListener('click', panzoom.reset);
+      });
+    </script>
+
+  </head> 
+
+  <body>
+    <div class="container my-5">
+      <div class="card p-3">
+        <div class="zoom-container overflow-hidden rounded border">
+          <div id="panzoom-element" class="panzoom-target">
+            <!-- Add your content here, e.g., a large image or complex layout -->
+            <img src="https://via.placeholder.com/1000x800.png?text=Zoomable+Content" class="img-fluid" alt="Zoomable Image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Zoom controls -->
+      <div class="d-flex justify-content-center gap-2 mb-3">
+        <button class="btn btn-primary" id="zoom-in-btn">Zoom In</button>
+        <button class="btn btn-primary" id="zoom-out-btn">Zoom Out</button>
+        <button class="btn btn-secondary" id="reset-btn">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>

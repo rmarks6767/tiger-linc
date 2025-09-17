@@ -1,3 +1,14 @@
+@mixin button-hover($color, $include-hover: true) {
+  border-color: $color;
+  
+  @if $include-hover {
+    &:hover {
+      background-color: darken(white, 20%);
+      border-color: darken($color, 20%);
+    }
+  }
+}
+
 .resiliency-roadmap-container {
   position: relative;
   background-color: #efb154;
@@ -14,6 +25,55 @@
     z-index: 9999;
     margin: 10px;
   }
+
+  .popover {
+    // border: none;
+    // background-color: transparent;
+
+    // .popover-body {
+    //   padding: 0;
+    // }
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    .flip-card-back {
+      background-color: #2980b9;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  }
+
 
   .resiliency-roadmap {
     width: 1350px;
@@ -32,6 +92,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        // border: 1px solid black;
 
         .road {
           margin: -1px;
@@ -85,85 +146,16 @@
           }
 
 
-          &.red {
-            border-color: #ff1616;
-
-            &:hover {
-              border-color: darken(#ff1616, 20%);
-            }
-          }
-
-          &.pink {
-            border-color: #ff66c4;
-
-            &:hover {
-              border-color: darken(#ff66c4, 20%);
-            }
-          }
-
-          &.light-purple {
-            border-color: #cb6ce6;
-
-            &:hover {
-              border-color: darken(#cb6ce6, 20%);
-            }
-          }
-
-          &.purple {
-            border-color: #8c52ff;
-
-            &:hover {
-              border-color: darken(#8c52ff, 20%);
-            }
-          }
-
-          &.teal {
-            border-color: #03989e;
-
-            &:hover {
-              border-color: darken(#03989e, 20%);
-            }
-          }
-
-          &.blue {
-            border-color: #004aad;
-
-            &:hover {
-              border-color: darken(#004aad, 20%);
-            }
-          }
-
-          &.lime-green {
-            border-color: #7ed957;
-
-            &:hover {
-              border-color: darken(#7ed957, 20%);
-            }
-          }
-
-          &.yellow {
-            border-color: #d6b841;
-
-            &:hover {
-              border-color: darken(#d6b841, 20%);
-            }
-          }
-
-          &.orange {
-            border-color: #ff914d;
-
-            &:hover {
-              border-color: darken(#ff914d, 20%);
-            }
-          }
-
-          &.green {
-            border-color: #008037;
-
-            &:hover {
-              border-color: darken(#008037, 20%);
-            }
-          }
+          &.red { @include button-hover(#ff1616); }
+          &.pink { @include button-hover(#ff66c4); }
+          &.light-purple { @include button-hover(#cb6ce6); }
+          &.purple { @include button-hover(#8c52ff); }
+          &.teal { @include button-hover(#03989e); }
+          &.blue { @include button-hover(#004aad); }
+          &.lime-green { @include button-hover(#7ed957); }
+          &.yellow { @include button-hover(#d6b841); }
+          &.orange { @include button-hover(#ff914d); }
+          &.green { @include button-hover(#008037); }
         }
 
         .start-end {
@@ -174,6 +166,29 @@
           align-items: center;
           font-weight: bold;
           padding: 10px;
+        }
+
+        .stop-text {
+          border: 6px solid;
+          margin: 0;
+          font-size: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+          padding: 10px;
+          background-color: white;
+
+          &.red { @include button-hover(#ff1616, false); }
+          &.pink { @include button-hover(#ff66c4, false); }
+          &.light-purple { @include button-hover(#cb6ce6, false); }
+          &.purple { @include button-hover(#8c52ff, false); }
+          &.teal { @include button-hover(#03989e, false); }
+          &.blue { @include button-hover(#004aad, false); }
+          &.lime-green { @include button-hover(#7ed957, false); }
+          &.yellow { @include button-hover(#d6b841, false); }
+          &.orange { @include button-hover(#ff914d, false); }
+          &.green { @include button-hover(#008037, false); }
         }
       }
     }

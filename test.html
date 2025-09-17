@@ -44,6 +44,7 @@
 
         return new bootstrap.Popover(popoverTriggerEl, {
           container: "#popover-container",
+          html: true,
         });
       });
     }
@@ -117,8 +118,47 @@
       });
     }
 
+    function registerCarousels() {
+      const carousels = [
+        { 
+          id: '#mindfulness-carousel',
+          numCards: 6,
+        },
+      ]
+
+      carousels.forEach(({ id, numCards }) => {
+        const element = document.querySelector(id);
+
+        const carousel = new bootstrap.Carousel(element, {
+          wrap: false
+        });
+
+        element.classList.remove('wp-block-gallery');
+
+        element.addEventListener('slide.bs.carousel', event => {
+          const next = document.querySelector(`${id}-next`);
+          const previous = document.querySelector(`${id}-prev`);
+
+          // Disable previous button on first slide
+          if (event.to === 0) {
+            previous.setAttribute('disabled', 'true');
+          } else {
+            previous.removeAttribute('disabled');
+          }
+
+          // Disable next button on last slide
+          if (event.to === numCards - 1) {
+            next.setAttribute('disabled', 'true');
+          } else {
+            next.removeAttribute('disabled');
+          }
+        });
+      })
+    }
+
     registerPopovers();
     registerPanzoom();
+    registerCarousels();
   });
 </script>
   </head>
@@ -159,10 +199,8 @@
           <button
             type="button"
             class="colored-button pink"
-            data-bs-toggle="popover"
-            data-bs-placement="bottom"
-            data-bs-title="Mindfulness"
-            data-bs-content="Breathing, Being Still, Being Aware, & Being Intentional"
+            data-bs-toggle="modal"
+            data-bs-target="#mindfulnessModal"
           >
             2
           </button>
@@ -205,8 +243,12 @@
           <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <!-- wp:group {"className":"tile align-items-start"} -->
+        <div class="wp-block-group tile align-items-start">
+          <!-- wp:paragraph {"className":"stop-text pink rounded"}  -->
+          <p class="stop-text pink rounded">Mindfulness</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile">
@@ -215,14 +257,22 @@
           <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <!-- wp:group {"className":"tile align-items-end"} -->
+        <div class="wp-block-group tile align-items-end">
+          <!-- wp:paragraph {"className":"stop-text light-purple rounded"}  -->
+          <p class="stop-text light-purple rounded">Reframing & Gratitude</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
         <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <!-- wp:group {"className":"tile align-items-end"} -->
+        <div class="wp-block-group tile align-items-end">
+          <!-- wp:paragraph {"className":"stop-text purple rounded"}  -->
+          <p class="stop-text purple rounded">Spirituality</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
@@ -257,7 +307,11 @@
         </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <div class="wp-block-group tile">
+          <!-- wp:paragraph {"className":"stop-text red rounded"}  -->
+          <p class="stop-text red rounded">Community & Connection</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile">
@@ -328,7 +382,7 @@
           <div class="wp-block-group road cap"></div>
           <!-- /wp:group -->
           <!-- wp:paragraph {"className":"start-end"}  -->
-          <p class="start-end">Start →</p>
+          <p class="start-end">Start</p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -383,7 +437,11 @@
         </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <div class="wp-block-group tile">
+          <!-- wp:paragraph {"className":"stop-text teal rounded"}  -->
+          <p class="stop-text teal rounded">Self-Awareness</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile">
@@ -414,8 +472,12 @@
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
         <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <!-- wp:group {"className":"tile align-items-end"} -->
+        <div class="wp-block-group tile align-items-end">
+          <!-- wp:paragraph {"className":"stop-text orange rounded"}  -->
+          <p class="stop-text orange rounded">Meaning & Purpose</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
@@ -428,7 +490,11 @@
         </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <div class="wp-block-group tile">
+          <!-- wp:paragraph {"className":"stop-text lime-green rounded"}  -->
+          <p class="stop-text lime-green rounded">Self-Compassion, Perspective, and Self-Care</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile">
@@ -457,7 +523,7 @@
           <div class="wp-block-group road cap"></div>
           <!-- /wp:group -->
           <!-- wp:paragraph {"className":"start-end"}  -->
-          <p class="start-end">End ←</p>
+          <p class="start-end">End</p>
           <!-- /wp:paragraph -->
           <!-- wp:group {"className":"road cap"} -->
           <div class="wp-block-group road cap"></div>
@@ -571,8 +637,22 @@
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
         <!-- /wp:group -->
+        <!-- wp:group {"className":"tile align-items-start"} -->
+        <div class="wp-block-group tile align-items-start">
+          <!-- wp:paragraph {"className":"stop-text green rounded"}  -->
+          <p class="stop-text green rounded">Positive Impact for Others</p>
+          <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
+        <!-- /wp:group -->
+        <!-- wp:group {"className":"tile align-items-start"} -->
+        <div class="wp-block-group tile align-items-start">
+          <!-- wp:paragraph {"className":"stop-text yellow rounded"}  -->
+          <p class="stop-text yellow rounded">Growth Mindset & Perseverance</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
@@ -583,14 +663,12 @@
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
         <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
-        <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
-        <!-- /wp:group -->
-        <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <!-- wp:group {"className":"tile align-items-start"} -->
+        <div class="wp-block-group tile align-items-start">
+          <!-- wp:paragraph {"className":"stop-text blue rounded"}  -->
+          <p class="stop-text blue rounded">Telling Empowering Stories</p>
+          <!-- /wp:paragraph -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
@@ -619,6 +697,170 @@
 </div>
 <!-- /wp:group -->
 
+          <div class="modal" id="mindfulnessModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Mindfulness Cards</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Spirituality -->
+                  <!-- wp:block {"ref":702} /-->
+
+                  <!-- Self Compassion -->
+                  <!-- wp:block {"ref":700} /-->
+
+                  <!-- Self Awareness -->
+                  <!-- wp:block {"ref":698} /-->
+
+                  <!-- Reframing -->
+                  <!-- wp:block {"ref":696} /-->
+
+                  <!-- Growth Mindset -->
+                  <!-- wp:block {"ref":688} /-->
+
+                  <!-- Mindfulness -->
+                  <!-- wp:block {"ref":694} /-->
+
+                  <!-- Meaning and Purpose -->
+                  <!-- wp:block {"ref":692} /-->
+
+                  <div id='mindfulness-carousel' class='carousel slide'>
+                    <div class='carousel-inner'>
+                      <div class='carousel-item active'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_1.jpg' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                      <div class='carousel-item'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_2.jpg' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                      <div class='carousel-item'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_3.jpg' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                      <div class='carousel-item'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_4.jpg' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                      <div class='carousel-item'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_5.jpg' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                      <div class='carousel-item'>
+                        <img src='https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_6.png' class='d-block w-100' alt='Mindfulness'>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button disabled type='button' id="mindfulness-carousel-prev" data-bs-target='#mindfulness-carousel' data-bs-slide='prev'>
+                    <i class="bi bi-arrow-left-circle-fill"></i>
+                    Previous
+                  </button>
+                  <button type='button' id="mindfulness-carousel-next" data-bs-target='#mindfulness-carousel' data-bs-slide='next'>
+                    <i class="bi bi-arrow-right-circle-fill"></i>
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- SPIRITUALITY -->
+
+      <!-- wp:image {"id":682,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/spirituality_1-1024x1024.jpg" 
+          alt="" 
+          class="wp-image-682"
+        />
+      </figure>
+      <!-- /wp:image -->
+
+<!-- MINDFULNESS -->
+
+      <!-- wp:image {"id":667,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_1.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-667"
+        />
+      </figure>
+      <!-- /wp:image -->
+      <!-- wp:image {"id":668,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_2-1024x1024.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-668"
+        />
+      </figure>
+      <!-- /wp:image -->
+      <!-- wp:image {"id":669,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_3-1024x1024.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-669"
+        />
+      </figure>
+      <!-- /wp:image -->
+      <!-- wp:image {"id":670,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_4-1024x1024.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-670"
+        />
+      </figure>
+      <!-- /wp:image -->
+      <!-- wp:image {"id":671,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_5-1024x1024.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-671"
+        />
+      </figure>
+      <!-- /wp:image -->
+      <!-- wp:image {"id":672,"sizeSlug":"large","linkDestination":"none"} -->
+      <figure class="wp-block-image size-large">
+        <img 
+          src="https://wp.towson.edu/tigerlinc/files/2025/09/mindfulness_6-1024x1024.jpg" 
+          alt="Mindfulness" 
+          class="wp-image-672"
+        />
+      </figure>
+      <!-- /wp:image -->   
     </div>
   </body>
 </html>
+
+<!-- wp:html -->
+<button
+  type="button"
+  class="colored-button pink"
+  data-bs-toggle="modal"
+  data-bs-target="#mindfulnessModal"
+>
+  2
+</button>
+<div class="modal" id="mindfulnessModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Mindfulness -->
+      <!-- wp:block {"ref":694} /-->
+      <div class="modal-footer">
+        <button disabled type='button' id="mindfulness-carousel-prev" data-bs-target='#mindfulness-carousel' data-bs-slide='prev'>
+          <i class="bi bi-arrow-left-circle-fill"></i>
+          Previous
+        </button>
+        <button type='button' id="mindfulness-carousel-next" data-bs-target='#mindfulness-carousel' data-bs-slide='next'>
+          <i class="bi bi-arrow-right-circle-fill"></i>
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /wp:html -->

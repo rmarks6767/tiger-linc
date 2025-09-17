@@ -91,6 +91,58 @@
       });
     }
 
+    function registerCarousels() {
+      const elements = document.querySelectorAll(".carousel");
+
+      elements.forEach((element) => {
+        const carousel = new bootstrap.Carousel(element, {
+          wrap: false
+        });
+
+        // Remove all classes that wordpress adds
+        const carouselInner = element.querySelector('.carousel-inner');
+        carouselInner.classList.forEach(cls => {
+          if (cls !== 'carousel-inner') {
+            carouselInner.classList.remove(cls);
+          }
+        });
+
+        // Add carousel-item class to each image and set the first one as active
+        const images = element.querySelectorAll('.wp-block-image');
+        images.forEach((img, i) => {
+          console.log("Found image", img);
+
+          if (i === 0) {
+            img.classList.add('active');
+          }
+
+          img.classList.add('carousel-item');
+        });
+
+        element.addEventListener('slide.bs.carousel', event => {
+          console.log('Slide event', `${element.id}-next`);
+
+          const next = document.getElementById(`${element.id}-next`);
+          const previous = document.getElementById(`${element.id}-prev`);
+
+          // Disable previous button on first slide
+          if (event.to === 0) {
+            previous.setAttribute('disabled', 'true');
+          } else {
+            previous.removeAttribute('disabled');
+          }
+
+          // Disable next button on last slide
+          if (event.to === images.length - 1) {
+            next.setAttribute('disabled', 'true');
+          } else {
+            next.removeAttribute('disabled');
+          }
+        });
+      });
+    }
+
+    registerCarousels();
     registerPopovers();
     registerPanzoom();
   });

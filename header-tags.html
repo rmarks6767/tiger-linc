@@ -57,7 +57,9 @@
         return;
       }
 
-      const panzoom = Panzoom(elem);
+      const panzoom = Panzoom(elem, {
+        startScale: 0.75,
+      });
 
       // Bind mouse wheel for zooming
       elem.parentElement.addEventListener("wheel", panzoom.zoomWithWheel);
@@ -101,7 +103,7 @@
 
         // Remove all classes that wordpress adds
         const carouselInner = element.querySelector('.carousel-inner');
-        carouselInner.classList.forEach(cls => {
+        Object.values(carouselInner.classList).forEach(cls => {
           if (cls !== 'carousel-inner') {
             carouselInner.classList.remove(cls);
           }
@@ -110,8 +112,6 @@
         // Add carousel-item class to each image and set the first one as active
         const images = element.querySelectorAll('.wp-block-image');
         images.forEach((img, i) => {
-          console.log("Found image", img);
-
           if (i === 0) {
             img.classList.add('active');
           }
@@ -120,8 +120,6 @@
         });
 
         element.addEventListener('slide.bs.carousel', event => {
-          console.log('Slide event', `${element.id}-next`);
-
           const next = document.getElementById(`${element.id}-next`);
           const previous = document.getElementById(`${element.id}-prev`);
 

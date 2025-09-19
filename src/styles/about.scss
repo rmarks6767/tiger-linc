@@ -1,24 +1,14 @@
 .about-page {
   .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     .text-container {
-      width: 50%;
-
       .list-container {
         .list-item {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
 
-          p {
-            @extend .remove-layout-flow;
-          }
-
           i {
-            font-size: 4rem;
+          font-size: 2rem;
             color: black;
             margin-right: 24px;
           }
@@ -26,13 +16,17 @@
       }
     }
 
-    @media (max-width: 991px) {
-      flex-direction: column;
+    @media (min-width: 992px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       .text-container {
-        width: 100%;
-        padding-right: 0;
-        padding-bottom: 24px;
+        width: 50%;
+
+        i {
+          font-size: 4rem;
+        }
       }
     }
 
@@ -64,14 +58,24 @@
       &.opposite {
         transform: rotate(180deg) translateY(2px);
       }
+
+      @media (max-width: 991px) {
+        transform: translateY(7px);
+        
+        &.opposite {
+          transform: rotate(180deg) translateY(10px);
+        }
+      }
     }
   }
 
   .clubs-container {
     .row {
-      * {
-        margin-block-end: unset !important;
-        margin-block-start: unset !important;
+      .col-12 {
+        @media (min-width: 992px) {
+            margin-block-start: 30px;
+            margin-block-end: 0;
+        }
       }
     }
   }

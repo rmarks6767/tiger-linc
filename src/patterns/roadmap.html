@@ -63,7 +63,22 @@
       <!-- wp:group {"className":"row"} -->
       <div class="wp-block-group row">
         <!-- wp:group {"className":"tile"} -->
-        <div class="wp-block-group tile"></div>
+        <div class="wp-block-group tile">
+          <!-- wp:group {"className":"how-to"} -->
+          <div class="wp-block-group how-to">
+            <!-- wp:html -->
+            <p class="lead fw-bold">
+              <i class="bi bi-question-octagon"></i> Help:
+            </p>
+            <!-- /wp:html -->
+            <!-- wp:paragraph {"className":"fw-bold"} -->
+            <p class="fw-bold">
+              Click the numbered buttons on the roadmap to learn more!
+            </p>
+            <!-- /wp:paragraph -->
+          </div>
+          <!-- /wp:group -->
+        </div>
         <!-- /wp:group -->
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile"></div>
@@ -78,7 +93,10 @@
         <!-- wp:group {"className":"tile align-items-start"} -->
         <div class="wp-block-group tile align-items-start">
           <!-- wp:paragraph {"className":"stop-text pink rounded"}  -->
-          <p class="stop-text pink rounded">Mindfulness: Breathing, Being Still, Being Aware, & Being Intentional</p>
+          <p class="stop-text pink rounded">
+            Mindfulness: Breathing, Being Still, Being Aware, & Being
+            Intentional
+          </p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -102,7 +120,9 @@
         <!-- wp:group {"className":"tile align-items-end"} -->
         <div class="wp-block-group tile align-items-end">
           <!-- wp:paragraph {"className":"stop-text purple rounded"}  -->
-          <p class="stop-text purple rounded">Spirituality: Awakened Awareness, Oneness, Empathy & Altruism</p>
+          <p class="stop-text purple rounded">
+            Spirituality: Awakened Awareness, Oneness, Empathy & Altruism
+          </p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -263,7 +283,9 @@
         <!-- wp:group {"className":"tile"} -->
         <div class="wp-block-group tile">
           <!-- wp:paragraph {"className":"stop-text teal rounded"}  -->
-          <p class="stop-text teal rounded">Self-Awareness: Core Values & Emotions</p>
+          <p class="stop-text teal rounded">
+            Self-Awareness: Core Values & Emotions
+          </p>
           <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
@@ -515,17 +537,45 @@
 <!-- wp:group {"className":"modals-container"} -->
 <div class="wp-block-group modals-container">
   <!-- wp:html -->
+  <div class="modal" id="communityConnectionModal" tabindex="-1">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
+      <div class="modal-content">
+        <!-- Community and Connection -->
+        <!-- wp:block {"ref":845} /-->
+      </div>
+    </div>
+  </div>
+  <!-- /wp:html -->
+
+  <!-- wp:html -->
   <div class="modal" id="mindfulnessModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Mindfulness -->
         <!-- wp:block {"ref":694} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="mindfulness-carousel-prev" data-bs-target='#mindfulness-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="mindfulness-carousel-prev"
+            data-bs-target="#mindfulness-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="mindfulness-carousel-next" data-bs-target='#mindfulness-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="mindfulness-carousel-next"
+            data-bs-target="#mindfulness-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -536,16 +586,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="reframingModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Reframing -->
         <!-- wp:block {"ref":696} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="reframing-carousel-prev" data-bs-target='#reframing-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="reframing-carousel-prev"
+            data-bs-target="#reframing-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="reframing-carousel-next" data-bs-target='#reframing-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="reframing-carousel-next"
+            data-bs-target="#reframing-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -556,16 +621,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="spiritualityModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Spirituality -->
         <!-- wp:block {"ref":702} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="spirituality-carousel-prev" data-bs-target='#spirituality-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="spirituality-carousel-prev"
+            data-bs-target="#spirituality-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="spirituality-carousel-next" data-bs-target='#spirituality-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="spirituality-carousel-next"
+            data-bs-target="#spirituality-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -576,16 +656,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="selfAwarenessModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Self Awareness -->
         <!-- wp:block {"ref":698} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="selfawareness-carousel-prev" data-bs-target='#selfawareness-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="selfawareness-carousel-prev"
+            data-bs-target="#selfawareness-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="selfawareness-carousel-next" data-bs-target='#selfawareness-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="selfawareness-carousel-next"
+            data-bs-target="#selfawareness-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -596,16 +691,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="tellingEmpoweringStoriesModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Empowering Stories -->
         <!-- wp:block {"ref":729} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="empoweringstories-carousel-prev" data-bs-target='#empoweringstories-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="empoweringstories-carousel-prev"
+            data-bs-target="#empoweringstories-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="empoweringstories-carousel-next" data-bs-target='#empoweringstories-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="empoweringstories-carousel-next"
+            data-bs-target="#empoweringstories-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -616,16 +726,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="selfCompassionModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Self Compassion -->
         <!-- wp:block {"ref":700} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="selfcompassion-carousel-prev" data-bs-target='#selfcompassion-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="selfcompassion-carousel-prev"
+            data-bs-target="#selfcompassion-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="selfcompassion-carousel-next" data-bs-target='#selfcompassion-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="selfcompassion-carousel-next"
+            data-bs-target="#selfcompassion-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -636,16 +761,31 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="growthMindsetModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Growth Mindset -->
         <!-- wp:block {"ref":688} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="growthmindset-carousel-prev" data-bs-target='#growthmindset-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="growthmindset-carousel-prev"
+            data-bs-target="#growthmindset-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="growthmindset-carousel-next" data-bs-target='#growthmindset-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="growthmindset-carousel-next"
+            data-bs-target="#growthmindset-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
@@ -656,20 +796,47 @@
   <!-- /wp:html -->
   <!-- wp:html -->
   <div class="modal" id="meaningPurposeModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
       <div class="modal-content">
         <!-- Meaning and Purpose -->
         <!-- wp:block {"ref":692} /-->
         <div class="modal-footer">
-          <button  class="btn" disabled type='button' id="meaningpurpose-carousel-prev" data-bs-target='#meaningpurpose-carousel' data-bs-slide='prev'>
+          <button
+            class="btn"
+            disabled
+            type="button"
+            id="meaningpurpose-carousel-prev"
+            data-bs-target="#meaningpurpose-carousel"
+            data-bs-slide="prev"
+          >
             <i class="bi bi-arrow-left-circle"></i>
             Previous
           </button>
-          <button class="btn" type='button' id="meaningpurpose-carousel-next" data-bs-target='#meaningpurpose-carousel' data-bs-slide='next'>
+          <button
+            class="btn"
+            type="button"
+            id="meaningpurpose-carousel-next"
+            data-bs-target="#meaningpurpose-carousel"
+            data-bs-slide="next"
+          >
             Next
             <i class="bi bi-arrow-right-circle"></i>
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- /wp:html -->
+  <!-- wp:html -->
+  <div class="modal" id="positiveImpactModal" tabindex="-1">
+    <div
+      class="modal-dialog modal-fullscreen-lg-down modal-fullscreen-lg-down-centered"
+    >
+      <div class="modal-content">
+        <!-- Positive Impact for Others -->
+        <!-- wp:block {"ref":847} /-->
       </div>
     </div>
   </div>

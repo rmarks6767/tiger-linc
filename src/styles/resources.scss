@@ -1,6 +1,6 @@
 .resources-page {
     .roadmap-container {
-        height: 100%;
+        height: calc(75dvh - 67px);
         display: flex;
         justify-content: center;
     }

@@ -1,10 +1,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.remove-layout-flow {
-  margin-block-end: unset !important;
-  margin-block-start: unset !important;
-}
-
 // Components
 @import "./blocks";
 @import "./header";

@@ -20,7 +20,6 @@ header {
     #navbar-container {
       .navbar-nav {
         .nav-item {
-          @extend .remove-layout-flow;
           padding: 0;
           margin-left: 24px;
 

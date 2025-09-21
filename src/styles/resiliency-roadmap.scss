@@ -77,7 +77,6 @@
       display: flex;
 
       .tile {
-        @extend .remove-layout-flow;
         position: relative;
         width: 150px;
         height: 150px;
@@ -130,7 +129,6 @@
         }
 
         .colored-button {
-          @extend .remove-layout-flow;
           background-color: white;
           color: black;
           width: 75px;

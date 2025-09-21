@@ -140,8 +140,17 @@
       });
     }
 
+    function removeLayoutFlowClasses() {
+      const elements = document.querySelectorAll('.is-layout-flow');
+
+      elements.forEach((element) => {
+        element.classList.remove('is-layout-flow');
+      });
+    }
+
     registerCarousels();
     registerPopovers();
     registerPanzoom();
+    removeLayoutFlowClasses();
   });
 </script>

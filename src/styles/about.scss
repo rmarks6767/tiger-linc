@@ -76,6 +76,14 @@
             margin-block-start: 30px;
             margin-block-end: 0;
         }
+
+        .card {
+          .wp-block-image {
+            img {
+              @extend .card-img-top;
+            }
+          }
+        }
       }
     }
   }

@@ -4,6 +4,14 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 />
+<meta
+  name="title"
+  content="Tiger LINC - Towson University's Mental Health and Spirituality Resource Center"
+/>
+<meta
+  name="description"
+  content="Tiger LINC is a non-profit organization of Towson University dedicated to fostering personal growth, community connection, and spiritual development through innovative programs and resources. Our vision is to normalize conversations around mental health by fostering connections and sharing information and practices that nurture awareness and support pre-service educators', in-service educators and mentors, faculty and local high school student's well-being and resiliency. Our mission is to  develop leaders in school communities who understand the importance of prioritizing their own well-being to support other's mental health."
+/>
 
 <!-- Bootstrap -->
 <script
@@ -98,53 +106,53 @@
 
       elements.forEach((element) => {
         const carousel = new bootstrap.Carousel(element, {
-          wrap: false
+          wrap: false,
         });
 
         // Remove all classes that wordpress adds
-        const carouselInner = element.querySelector('.carousel-inner');
-        Object.values(carouselInner.classList).forEach(cls => {
-          if (cls !== 'carousel-inner') {
+        const carouselInner = element.querySelector(".carousel-inner");
+        Object.values(carouselInner.classList).forEach((cls) => {
+          if (cls !== "carousel-inner") {
             carouselInner.classList.remove(cls);
           }
         });
 
         // Add carousel-item class to each image and set the first one as active
-        const images = element.querySelectorAll('.wp-block-image');
+        const images = element.querySelectorAll(".wp-block-image");
         images.forEach((img, i) => {
           if (i === 0) {
-            img.classList.add('active');
+            img.classList.add("active");
           }
 
-          img.classList.add('carousel-item');
+          img.classList.add("carousel-item");
         });
 
-        element.addEventListener('slide.bs.carousel', event => {
+        element.addEventListener("slide.bs.carousel", (event) => {
           const next = document.getElementById(`${element.id}-next`);
           const previous = document.getElementById(`${element.id}-prev`);
 
           // Disable previous button on first slide
           if (event.to === 0) {
-            previous.setAttribute('disabled', 'true');
+            previous.setAttribute("disabled", "true");
           } else {
-            previous.removeAttribute('disabled');
+            previous.removeAttribute("disabled");
           }
 
           // Disable next button on last slide
           if (event.to === images.length - 1) {
-            next.setAttribute('disabled', 'true');
+            next.setAttribute("disabled", "true");
           } else {
-            next.removeAttribute('disabled');
+            next.removeAttribute("disabled");
           }
         });
       });
     }
 
     function removeLayoutFlowClasses() {
-      const elements = document.querySelectorAll('.is-layout-flow');
+      const elements = document.querySelectorAll(".is-layout-flow");
 
       elements.forEach((element) => {
-        element.classList.remove('is-layout-flow');
+        element.classList.remove("is-layout-flow");
       });
     }
 
